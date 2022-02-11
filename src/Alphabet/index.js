@@ -8,7 +8,7 @@ const Alphabet = () => {
     <>
       <div className="grid gap-5 grid-cols-5">
         {Object.keys(ALPHABET).map((letter) => (
-          <Letter letter={letter} />
+          <Letter key={letter} letter={letter} />
         ))}
       </div>
       <LetterInsight letter="l" example={ALPHABET.l} />
