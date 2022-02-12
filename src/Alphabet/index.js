@@ -1,17 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import Letter from 'src/Letter';
-import LetterInsight from 'src/LetterInsight';
 import { ALPHABET } from 'src/constants/alphabet';
 
 const Alphabet = () => {
   return (
     <>
+      <header className="p-3">Bảng chữ cái</header>
       <div className="grid gap-5 grid-cols-5">
-        {Object.keys(ALPHABET).map((letter) => (
-          <Letter key={letter} letter={letter} />
+        {ALPHABET.map((letterData) => (
+          <Link to={`/${letterData.id}`} key={letterData.id}>
+            <Letter letter={letterData.letter} />
+          </Link>
         ))}
       </div>
-      <LetterInsight letter="l" example={ALPHABET.l} />
     </>
   );
 };
