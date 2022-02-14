@@ -14,17 +14,17 @@ const LetterInsight = () => {
     return <NotFound />;
   }
   return (
-    <div className="flex flex-col">
-      <Link className="text-base" to="/">
-        Back to the Alphabet
-      </Link>
-      <div className="flex flex-row">
-        <Link to={`/${prev}`}>{prevLetter.letter}-</Link>
+    <>
+      <div className="flex flex-row place-content-between">
+        <Link to={`/${prev}`}>{prevLetter.letter}</Link>
         <header className="text-red-600">{letter}</header>
-        <Link to={`/${next}`}>- {nextLetter.letter}</Link>
+        <Link to={`/${next}`}>{nextLetter.letter}</Link>
+        <Link to="/">{'     <-'}</Link>
       </div>
-      <span className="text-red-600">Examples: {examples.join(', ')}</span>
-    </div>
+      <span className="text-red-600 [text-shadow:0_0_5px_rgba(255,192,203,50%)]">
+        {examples.join(', ')}
+      </span>
+    </>
   );
 };
 
